@@ -286,6 +286,8 @@ struct btDbvt
 	void write(IWriter* iwriter) const;
 	void clone(btDbvt& dest, IClone* iclone = 0) const;
 	static int maxdepth(const btDbvtNode* node);
+	int getHeight() const;
+
 	static int countLeaves(const btDbvtNode* node);
 	static void extractLeaves(const btDbvtNode* node, btAlignedObjectArray<const btDbvtNode*>& leaves);
 #if DBVT_ENABLE_BENCHMARK

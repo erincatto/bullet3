@@ -341,6 +341,8 @@ SET(BulletExampleBrowser_SRCS
   ../Constraints/ConstraintPhysicsSetup.cpp
   ../Constraints/ConstraintPhysicsSetup.h
 
+	../TiledWorld/TiledWorld.cpp
+	../TiledWorld/TiledWorld.h
 
 	../ThirdPartyLibs/stb_image/stb_image.cpp
 	../ThirdPartyLibs/stb_image/stb_image.h

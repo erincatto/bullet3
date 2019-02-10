@@ -185,11 +185,13 @@ btBroadphaseProxy* btDbvtBroadphase::createProxy(const btVector3& aabbMin,
 																				   collisionFilterMask);
 
 	btDbvtAabbMm aabb = btDbvtVolume::FromMM(aabbMin, aabbMax);
+	btDbvtAabbMm enlargedAABB = aabb;
+	enlargedAABB.Expand(btVector3(gDbvtMargin, gDbvtMargin, gDbvtMargin));
 
 	//bproxy->aabb			=	btDbvtVolume::FromMM(aabbMin,aabbMax);
 	proxy->stage = m_stageCurrent;
 	proxy->m_uniqueId = ++m_gid;
-	proxy->leaf = m_sets[0].insert(aabb, proxy);
+	proxy->leaf = m_sets[0].insert(enlargedAABB, proxy);
 	listappend(proxy, m_stageRoots[m_stageCurrent]);
 	if (!m_deferedcollide)
 	{
@@ -696,6 +698,9 @@ void btDbvtBroadphase::resetPool(btDispatcher* dispatcher)
 //
 void btDbvtBroadphase::printStats()
 {
+	int height1 = m_sets[0].getHeight();
+	int height2 = m_sets[1].getHeight();
+	printf("h1 = %d h2 = %d\n", height1, height2);
 }
 
 //

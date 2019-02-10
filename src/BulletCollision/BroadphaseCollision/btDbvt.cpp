@@ -680,6 +680,12 @@ int btDbvt::maxdepth(const btDbvtNode* node)
 }
 
 //
+int btDbvt::getHeight() const
+{
+	return maxdepth(m_root);
+}
+
+//
 int btDbvt::countLeaves(const btDbvtNode* node)
 {
 	if (node->isinternal())

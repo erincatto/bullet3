@@ -188,7 +188,8 @@ project "App_BulletExampleBrowser"
 		"../GyroscopicDemo/GyroscopicSetup.cpp",
 		"../GyroscopicDemo/GyroscopicSetup.h",
     "../ThirdPartyLibs/tinyxml2/tinyxml2.cpp",
-    "../ThirdPartyLibs/tinyxml2/tinyxml2.h",
+		"../ThirdPartyLibs/tinyxml2/tinyxml2.h",
+		"../TiledWorld/*",
         }
 if (hasCL and findOpenGL3()) then
 			files {

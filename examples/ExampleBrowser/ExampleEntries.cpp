@@ -53,6 +53,7 @@
 #include "../RoboticsLearning/KukaGraspExample.h"
 #include "../RoboticsLearning/GripperGraspExample.h"
 #include "../InverseKinematics/InverseKinematicsExample.h"
+#include "../TiledWorld/TiledWorld.h"
 
 #ifdef B3_ENABLE_TINY_AUDIO
 #include "../TinyAudio/TinyAudioExample.h"
@@ -106,6 +107,8 @@ struct ExampleEntry
 static ExampleEntry gDefaultExamples[] =
 	{
 		ExampleEntry(0, "API"),
+
+		ExampleEntry(1, "Tiled World", "This tiled world stresses the broad-phase", TiledWorldCreateFunc),
 
 		ExampleEntry(1, "Basic Example", "Create some rigid bodies using box collision shapes. This is a good example to familiarize with the basic initialization of Bullet. The Basic Example can also be compiled without graphical user interface, as a console application. Press W for wireframe, A to show AABBs, I to suspend/restart physics simulation. Press D to toggle auto-deactivation of the simulation. ", BasicExampleCreateFunc),
 

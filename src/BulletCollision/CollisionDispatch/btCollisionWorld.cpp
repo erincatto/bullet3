@@ -138,6 +138,10 @@ void btCollisionWorld::addCollisionObject(btCollisionObject* collisionObject, in
 	btVector3 maxAabb;
 	collisionObject->getCollisionShape()->getAabb(trans, minAabb, maxAabb);
 
+	btVector3 contactThreshold(gContactBreakingThreshold, gContactBreakingThreshold, gContactBreakingThreshold);
+	minAabb -= contactThreshold;
+	maxAabb += contactThreshold;
+
 	int type = collisionObject->getCollisionShape()->getShapeType();
 	collisionObject->setBroadphaseHandle(getBroadphase()->createProxy(
 		minAabb,
